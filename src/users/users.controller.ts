@@ -24,8 +24,8 @@ export class UsersController {
     return await this.userService.create(user);
   }
 
-  @Put()
-  async update(@Param(':id')id: number, @Body() user: User){
+  @Put(':id')
+  async update(@Param('id')id: number, @Body() user: User){
     return await this.userService.update(id, user);
   }
 

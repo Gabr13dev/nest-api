@@ -29,4 +29,8 @@ export class UserService {
   public async create(user: User){
     return await this.repo.save(user);
   }
+
+  public async getByEmail(email: string){
+    return await this.repo.findOne({email_user: email});
+  }
 }

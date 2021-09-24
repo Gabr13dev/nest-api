@@ -1,4 +1,4 @@
-import { PrimaryGeneratedColumn, Column, Entity, PrimaryColumn } from 'typeorm';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity({ name: 'users' })
 export class User {
@@ -11,11 +11,11 @@ export class User {
     @Column({ type: 'varchar', length: 150 })
     email_user: string;
 
-    @Column({ type: 'varchar', length: 200 })
+    @Column({ type: 'varchar', length: 300 })
     password_user: string;
 
-    @Column({ type: 'varchar', length: 300 })
-    avatarurl_user: string;
+    @Column({ type: 'integer', default: 0 })
+    role_user: number;
 
     @Column({ type: 'boolean', default: true })
     firsttime_user: boolean;
